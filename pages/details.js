@@ -63,22 +63,15 @@ class RecordDetails extends Component {
                                 <h3 style={{ marginBottom: '25px' }}>{this.props.name}</h3>
                                 <Grid columns={2}>
                                     <Grid.Row>
-                                        <Grid.Column>
-                                            <b style={{ color: 'grey' }}>Celular</b>
-                                        </Grid.Column>
-                                        <Grid.Column>
-                                            <b>{this.props.celphone}</b>
-                                        </Grid.Column>
+                                        <Grid.Column style={{ color: 'grey', fontWeight: 'bold' }}>Celular</Grid.Column>
+                                        <Grid.Column>{this.props.celphone}
+</Grid.Column>
                                     </Grid.Row>
                                 </Grid>
                                 <Grid columns={2}>
                                     <Grid.Row>
-                                        <Grid.Column>
-                                            <b style={{ color: 'grey' }}>Género</b>
-                                        </Grid.Column>
-                                        <Grid.Column>
-                                            <b>{this.props.gender}</b>
-                                        </Grid.Column>
+                                        <Grid.Column style={{ color: 'grey', fontWeight: 'bold'}}>Género</Grid.Column>
+                                        <Grid.Column>{this.props.gender}</Grid.Column>
                                     </Grid.Row>
                                 </Grid>
                             </Segment>
@@ -87,22 +80,14 @@ class RecordDetails extends Component {
                             <Header as="h3" color='grey' style={{ marginBottom: '25px' }}>DATOS ADICIONALES DE CONTACTO</Header>
                             <Grid columns={2}>
                                 <Grid.Row>
-                                    <Grid.Column>
-                                        <b style={{ color: 'grey' }}>Teléfono Fijo</b>
-                                    </Grid.Column>
-                                    <Grid.Column>
-                                        <div style={{ marginBottom: '5px', fontWeight: 'bold' }}>{this.props.phone}</div>
-                                    </Grid.Column>
+                                    <Grid.Column style={{ color: 'grey', fontWeight: 'bold'  }}>Teléfono Fijo</Grid.Column>
+                                    <Grid.Column style={{ marginBottom: '5px', fontWeight: 'bold' }}>{this.props.phone}</Grid.Column>
                                 </Grid.Row>
                             </Grid>
                             <Grid columns={1}>
                                 <Grid.Row>
-                                    <Grid.Column>
-                                        <b style={{ color: 'grey' }}>Email</b>
-                                    </Grid.Column>
-                                    <Grid.Column>
-                                        <div style={{ fontWeight: 'bold' }}>{this.props.email}</div>
-                                    </Grid.Column>
+                                    <Grid.Column style={{ color: 'grey', fontWeight: 'bold' }}>Email</Grid.Column>
+                                    <Grid.Column style={{ fontWeight: 'bold' }}>{this.props.email}</Grid.Column>
                                 </Grid.Row>
                             </Grid>
                         </Segment>
@@ -143,20 +128,6 @@ class RecordDetails extends Component {
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
-{/* 
-                            <Header as="h3" color='grey' style={{ marginTop: '35px', marginBottom: '25px' }}>Tu registro en PDF</Header>
-                            <Grid columns={2} verticalAlign='top'>
-                                <Grid.Row>
-                                    <Grid.Column>
-
-                                        <Link route='/pdf'>
-                                            <a style={{ fontSize: 15, color: '#1122E6', fontWeight: 'bold' }} 
-                                             onClick={this.onClickedUserUPDF}>Ver/Descarga PDF</a>
-                                        </Link>
-
-                                    </Grid.Column>
-                                </Grid.Row>
-                            </Grid> */}
 
                         </Segment>
 
@@ -166,10 +137,12 @@ class RecordDetails extends Component {
                                 <Grid.Row>
                                     <Grid.Column>
 
-                                        <Link route='/pdf'>
+                                        {/* <Link route='/pdf'>
                                             <a style={{ fontSize: 15, color: '#1122E6', fontWeight: 'bold' }} 
                                              onClick={this.onClickedUserUPDF}>Ver/Descarga PDF</a>
-                                        </Link>
+                                        </Link> */}
+                                        <Link route='/pdf' style={{ fontSize: 15, color: '#1122E6', fontWeight: 'bold' }}
+                                        onClick={this.onClickedUserUPDF}>Ver/Descargar PDF</Link>
 
                                     </Grid.Column>
                                 </Grid.Row>
@@ -187,9 +160,7 @@ class RecordDetails extends Component {
     render() {
         return (
             <Layout>
-                <div style={{ fontFamily: 'Helvetica' }}>
-                    {this.renderDisplay()}
-                </div>
+                <div style={{ fontFamily: 'Helvetica' }}>{this.renderDisplay()}</div>
             </Layout>
         );
     }

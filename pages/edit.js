@@ -71,7 +71,6 @@ class RecordEdit extends Component {
 
         this.setState({ loading: true }, { errorMessage: '' });
 
-
         try {
             const accountsEdit = await Web3.eth.getAccounts();
 
@@ -90,7 +89,6 @@ class RecordEdit extends Component {
 
         this.setState({ loading: false, name: '', celphone: '', phone: '', email: '', gender: '', dob: '', houseaddr: '', state: '', cp: '' });
     }
-
 
     renderDisplay() {
         return (
@@ -189,9 +187,7 @@ class RecordEdit extends Component {
     render() {
         return (
             <Layout>
-                <div style={{ fontFamily: 'Helvetica' }}>
-                    {this.renderDisplay()}
-                </div>
+                <div style={{ fontFamily: 'Helvetica' }}>{this.renderDisplay()}</div>
             </Layout>
         );
     }

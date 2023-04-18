@@ -39,15 +39,14 @@ class RecordsList extends Component {
                 header: address,
                 description: (
                     
-                    <Link route={`/record/${address}`}>
-                        <a style={{ fontSize: 15, color: '#1122E6', fontWeight:'bold' }}>Ver Perfil Del Usuario</a>
-                    </Link>
+                    // <Link route={`/record/${address}`}>
+                    //     <a style={{ fontSize: 15, color: '#1122E6', fontWeight:'bold' }}>Ver Perfil Del Usuario</a>
+                    // </Link>
+                    <Link route={`/record/${address}`} style={{ fontSize: 15, color: '#1122E6', fontWeight: 'bold' }}>Ver Perfil Del Usuario</Link>
                 ),
                 fluid: true
             };
         });
-        // console.log('items', items)
-        // console.log('nay')
         
         //Agregar todos los registros al grupo de tarjetas
         return <Card.Group items={items} />;

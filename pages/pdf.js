@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import Router from 'next/router'
 import record from '../ethereum/record';
 import Web3 from '../ethereum/web3';
-import { Router } from '../routes';
+//import { Router } from '../routes';
 import { PDFViewer } from '@react-pdf/renderer';
 import { Document, Page, Text, View, StyleSheet, Image, Font } from "@react-pdf/renderer";
 
@@ -38,9 +39,9 @@ class RecordPDF extends Component {
         }
         catch (err) {
             //alert("NO TINES PERMISO PARA VER ESTA CUENTA");
+            //alert("NO TINES PERMISO PARA VER ESTA CUENTA");
             console.log(err)
-            // alert( 'errorMessage', errorMessage );
-            Router.pushRoute('/list');
+            Router.push('/list');
         }
     }
 

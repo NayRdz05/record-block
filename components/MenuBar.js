@@ -14,35 +14,37 @@ export default class MenuBar extends Component {
     Router.pushRoute(`/edit/${accounts[0]}`);
   }
  
-
   render() {
     return (
       <Menu size='large' inverted>
-          <Link route='/'>
-              <a className='item'>Home</a>
-          </Link>
+
+           <Link route='/' className='item'>Home</Link>
 
           <Menu.Menu position='right'>
             
-            <Link route='/list'>
+            {/* <Link route='/list'>
                 <a className='item'>Lista de Registros</a>
-            </Link>
+            </Link> */}
+            <Link route='/list' className='item'>Lista de Registros</Link>
             
             <Dropdown item text='Usuario'>
               <Dropdown.Menu>
                 <Dropdown.Item>
-                  <Link route='/edit'>
+                  {/* <Link route='/edit'>
                     <a style={{color:'black'}} onClick={this.onClickedUserEdit}>Editar Perfil</a>
-                  </Link>
+                  </Link> */}
+                  <Link route='/edit' style={{color:'black'}} onClick={this.onClickedUserEdit}>Editar Perfil</Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
             <Dropdown item text='Registro'>
               <Dropdown.Menu>
                 <Dropdown.Item>
-                  <Link route='/register-user'>
+                  {/* <Link route='/register-user'>
                     <a style={{color:'black'}}>Usuario</a>
-                  </Link>
+                  </Link> */}
+                  <Link route='/register-user' style={{color:'black'}}>Usuario</Link>
+                  
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
