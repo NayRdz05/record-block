@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Header, Image} from 'semantic-ui-react';
+import { Grid, Segment, Header, Image, Button } from 'semantic-ui-react';
 import Layout from '../components/Layout';
 import record from '../ethereum/record';
 import Web3 from '../ethereum/web3';
 import { Router } from '../routes';
-import { Link } from '../routes';
+
 
 
 class RecordDetails extends Component {
@@ -13,7 +13,7 @@ class RecordDetails extends Component {
         event.preventDefault();
         const accounts = await Web3.eth.getAccounts();
         Router.pushRoute(`/pdf/${accounts[0]}`);
-      }
+    }
 
     static async getInitialProps(props) {
         const addr = props.query.address;
@@ -27,7 +27,7 @@ class RecordDetails extends Component {
             //perfil = (records[3] == 'Masculino') ? 'https://cdn-icons-png.flaticon.com/512/180/180658.png' : 'https://cdn-icons-png.flaticon.com/512/201/201634.png';
 
             return {
-                     
+
                 name: records[0],
                 celphone: records[1],
                 phone: records[2],
@@ -39,7 +39,7 @@ class RecordDetails extends Component {
                 state: records2[1],
                 cp: records2[2],
                 perfil
-        
+
             };
         }
         catch (err) {
@@ -64,14 +64,13 @@ class RecordDetails extends Component {
                                 <Grid columns={2}>
                                     <Grid.Row>
                                         <Grid.Column style={{ color: 'grey', fontWeight: 'bold' }}>Celular</Grid.Column>
-                                        <Grid.Column>{this.props.celphone}
-</Grid.Column>
+                                        <Grid.Column style={{ marginBottom: '5px', fontWeight: 'bold' }}>{this.props.celphone}</Grid.Column>
                                     </Grid.Row>
                                 </Grid>
                                 <Grid columns={2}>
                                     <Grid.Row>
-                                        <Grid.Column style={{ color: 'grey', fontWeight: 'bold'}}>Género</Grid.Column>
-                                        <Grid.Column>{this.props.gender}</Grid.Column>
+                                        <Grid.Column style={{ color: 'grey', fontWeight: 'bold' }}>Género</Grid.Column>
+                                        <Grid.Column style={{ marginBottom: '5px', fontWeight: 'bold' }}>{this.props.gender}</Grid.Column>
                                     </Grid.Row>
                                 </Grid>
                             </Segment>
@@ -80,11 +79,11 @@ class RecordDetails extends Component {
                             <Header as="h3" color='grey' style={{ marginBottom: '25px' }}>DATOS ADICIONALES DE CONTACTO</Header>
                             <Grid columns={2}>
                                 <Grid.Row>
-                                    <Grid.Column style={{ color: 'grey', fontWeight: 'bold'  }}>Teléfono Fijo</Grid.Column>
+                                    <Grid.Column style={{ color: 'grey', fontWeight: 'bold' }}>Teléfono Fijo</Grid.Column>
                                     <Grid.Column style={{ marginBottom: '5px', fontWeight: 'bold' }}>{this.props.phone}</Grid.Column>
                                 </Grid.Row>
                             </Grid>
-                            <Grid columns={1}>
+                            <Grid columns={2}>
                                 <Grid.Row>
                                     <Grid.Column style={{ color: 'grey', fontWeight: 'bold' }}>Email</Grid.Column>
                                     <Grid.Column style={{ fontWeight: 'bold' }}>{this.props.email}</Grid.Column>
@@ -128,28 +127,18 @@ class RecordDetails extends Component {
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>
-
                         </Segment>
 
                         <Segment>
-                        <Header as="h3" color='grey' style={{ marginTop: '35px', marginBottom: '25px' }}>Tu registro en PDF</Header>
-                            <Grid columns={2} verticalAlign='top'>
+                            <Grid columns={2}>
                                 <Grid.Row>
-                                    <Grid.Column>
-
-                                        {/* <Link route='/pdf'>
-                                            <a style={{ fontSize: 15, color: '#1122E6', fontWeight: 'bold' }} 
-                                             onClick={this.onClickedUserUPDF}>Ver/Descarga PDF</a>
-                                        </Link> */}
-                                        <Link route='/pdf' style={{ fontSize: 15, color: '#1122E6', fontWeight: 'bold' }}
-                                        onClick={this.onClickedUserUPDF}>Ver/Descargar PDF</Link>
-
-                                    </Grid.Column>
+                                    <Grid.Column style={{ color: 'grey', fontWeight: 'bold', marginTop: '20px' }}>Obtener registro en PDF:</Grid.Column>
+                                    <Button
+                                        route='/pdf' style={{ fontSize: 15, color: '#1122E6', fontWeight: 'bold',  marginTop: '5px' }}
+                                        onClick={this.onClickedUserUPDF}>Ver/Descargar PDF</Button>
                                 </Grid.Row>
-                            </Grid>     
-                            </Segment>
-                    
-
+                            </Grid>
+                        </Segment>
                     </Grid.Column>
                     <Grid.Column width={1} />
                 </Grid.Row>

@@ -227,16 +227,16 @@ const HomepageLayout = () => (
             <Header as='h3' style={{ fontSize: '2em' }}>
               Ayudamos a las empresas.
             </Header>
-            {/* <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: '1.33em' }}>
               Podemos darle a su empresa el poder para hacer cosas que nunca creyeron posibles.
               Permita deleitar a sus clientes y potenciar sus necesidades a través de Sistemas
-              confiables de registros sobre Blockchain.</p> */}
+              confiables de registros sobre Blockchain.</p>
             <Header as='h3' style={{ fontSize: '2em' }}>
               Sistemas de Registro sobre Blockchain
             </Header>
-            {/* <p style={{ fontSize: '1.33em' }}>
+            <p style={{ fontSize: '1.33em' }}>
               Sí, así es, sistemas de registros diseñados y fáciles de usar.
-            </p> */}
+            </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
             <Image bordered rounded size='large' src='https://enzyme.biz/hubfs/iStock-1061234002.jpg' />
@@ -257,9 +257,9 @@ const HomepageLayout = () => (
             <Header as='h3' style={{ fontSize: '2em' }}>
               "Fácil de usar, Confiable, Seguro"
             </Header>
-            {/* <p style={{ fontSize: '1.33em' }}>La seguridad y la privacidad de Blockchain más allá de la Tecnología
+            <p style={{ fontSize: '1.33em' }}>La seguridad y la privacidad de Blockchain más allá de la Tecnología
               y de las Criptomonedas.
-            </p> */}
+            </p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
@@ -276,10 +276,10 @@ const HomepageLayout = () => (
         <Header as='h3' style={{ fontSize: '2em' }}>
           Beneficio esperado con el de Blockchain.
         </Header>
-        {/* <p style={{ fontSize: '1.33em' }}>
+        <p style={{ fontSize: '1.33em' }}>
           La información del historial del registro de un usuario está contenido en una cadena blockchain en la cual se puede aportar
           información adicional, que estará disponible en cualquier momento y en cualquier lugar.
-        </p> */}
+        </p>
         <Button as='a' size='large'>
           Read More
         </Button>
@@ -290,17 +290,17 @@ const HomepageLayout = () => (
           horizontal
           style={{ margin: '3em 0em', textTransform: 'uppercase' }}
         >
-          {/* <a href='#'>Casos de estudio</a> */}
+          <a href='#'>Casos de estudio</a>
         </Divider>
 
         <Header as='h3' style={{ fontSize: '2em' }}>
           ¿Es Blockchain el mejor paso adelante para los sistemas de registros?
         </Header>
-        {/* <p style={{ fontSize: '1.33em' }}>
+        <p style={{ fontSize: '1.33em' }}>
           La tecnología Blockchain tiene el potencial de permitir una gestión de datos más segura, transparente y equitativa.
           Además de administrar datos de manera segura, blockchain tiene ventajas significativas en la distribución de acceso,
           control y propiedad de datos a los usuarios finales.
-        </p> */}
+        </p>
         <Button as='a' size='large'>
           Ver Investigación
         </Button>
@@ -333,9 +333,9 @@ const HomepageLayout = () => (
               <Header as='h4' inverted>
                 Insiscomp
               </Header>
-              {/* <p>
+              <p>
                 Accede a los cursos de tecnología más novedosos y destacados del mercado.
-              </p> */}
+              </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -345,5 +345,3 @@ const HomepageLayout = () => (
 )
 
 export default dynamic(() => Promise.resolve(HomepageLayout), {ssr: false})
-//export default HomepageLayout
-//export default dynamic (() => Promise.resolve(Navbar), {ssr: false})
