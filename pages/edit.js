@@ -69,7 +69,7 @@ class RecordEdit extends Component {
         const { name, celphone, phone, email, gender, dob, houseaddr, state, cp } = this.state;
         console.log(this.state);
 
-        this.setState({ loading: true }, { errorMessage: '' });
+        this.setState({loading: true, errorMessage: ''});
 
         try {
             const accountsEdit = await Web3.eth.getAccounts();
